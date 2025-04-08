@@ -16,7 +16,7 @@
 
         <article class="div2">
             <h2>Introduction</h2>
-            <p>Place holder Place holderPlace holderPlace holderPlace holderPlace holderPlace holderPlace holder</p>
+            <p>This report investigates the potential correlation between research productivity and grant allocation by analyzing citation and publication data in relation to the NSERC Discovery Grant (DG). The Discovery Grant, offered by the Natural Sciences and Engineering Research Council of Canada, supports Canadian university researchers in advancing knowledge across science and engineering disciplines. One of the key indicators often used—albeit unofficially—to assess a researcher's impact is the volume of their recent scholarly output and its reception in the academic community. To explore this relationship, we collected data on Canadian computer scientists who received a DG over the past 15 years, then compiled their publication and citation counts from Google Scholar, focusing on the six years preceding their grant year. This study aims to determine whether a measurable link exists between research impact and funding decisions through statistical analysis and data visualization.</p>
             <h3>Researcher Output</h3>
             <table id="researcherTable" class="display">
             <thead>
@@ -39,11 +39,11 @@
             fetch("output.txt")
             .then(response => response.text())
             .then(text => {
-                const lines = text.split("\n");
+                const lines = text.split("\\n");
                 const tbody = document.getElementById("table-body");
 
                 lines.forEach(line => {
-                const regex = /Name:\s*(.*?)\s+Year:\s*(\d{4})\s+Publication count:\s*(\d+)\s+Citation count:\s*(\d+)/;
+                const regex = /Name:\\s*(.*?)\\s+Year:\\s*(\\d{4})\\s+Publication count:\\s*(\\d+)\\s+Citation count:\\s*(\\d+)/;
                 const match = line.match(regex);
                 if (match) {
                     const [_, name, year, pubs, cits] = match;
@@ -69,13 +69,12 @@
         </article>
 
         <article class="div5">
-            <h2>Continue</h2>
+            <h2>Conclusion</h2>
+            <p>The analysis conducted in this project reveals a moderate positive correlation between researchers’ publication and citation counts and their eligibility for the NSERC Discovery Grant, as reflected by a Pearson correlation coefficient of 0.59. While this suggests that higher research output and academic influence may enhance a researcher’s chances of receiving funding, it also highlights that citations and publications are only part of a broader evaluation process. Other qualitative factors likely play a role in funding decisions, such as the research proposal’s innovation, relevance, and alignment with NSERC’s priorities. Nonetheless, this study demonstrates how publicly available data and simple statistical tools can provide meaningful insights into the dynamics of research funding in Canada’s academic landscape.</p>
         </article>
+
         <article class="div6">
             <h2>Continue</h2>
         </article>
-      
-
-
     </body>
 </html>

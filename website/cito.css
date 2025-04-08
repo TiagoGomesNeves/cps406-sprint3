@@ -1,16 +1,71 @@
-.parent {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: px;
-    text-align:center;
-    }
-    
-.div1 { grid-area: 1 / 1 / 2 / 7; }
-.div2 { grid-area: 4 / 1 / 4 / 4; }
-.div3 { grid-area: 8 / 1 / 6 / 4; }
-.div4 { grid-area: 2 / 4 / 4 / 7; }
-.div5 { grid-area: 4 / 4 / 6 / 7; }
-.div6 { grid-area: 6 / 4 / 8 / 7; }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    margin-bottom: 30px;
+}
 
+header.div1 h1 {
+    margin: 20px 0 10px 0;
+    padding: 0;
+    font-size: 32px;
+    text-align: center;
+}
+
+article h2,
+article h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+article p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.parent {
+    display: block;
+    text-align: center;
+}
+
+#yearStart,
+#yearEnd,
+button {
+    margin: 0 10px 10px 0;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#researcherTable {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.div2,
+.div3 {
+    padding: 0;
+    margin: 0 auto;
+}

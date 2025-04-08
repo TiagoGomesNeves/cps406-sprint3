@@ -1,0 +1,81 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta lang="en">
+        <title></title>
+        <meta name="description" content="Research document about the importance of publication and citation count on obtiaing the NSERC Discovery Grant award">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="cito.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    </head>
+    <body class="parent">
+        <header class="div1">
+            <h1>Title Report</h1>
+        </header>
+
+        <article class="div2">
+            <h2>Introduction</h2>
+            <p>Place holder Place holderPlace holderPlace holderPlace holderPlace holderPlace holderPlace holder</p>
+            <h3>Researcher Output</h3>
+            <table id="researcherTable" class="display">
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Publication Count</th>
+                <th>Citation Count</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+            </table>
+        </article>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+        <script>
+            fetch("output.txt")
+            .then(response => response.text())
+            .then(text => {
+                const lines = text.split("\n");
+                const tbody = document.getElementById("table-body");
+
+                lines.forEach(line => {
+                const regex = /Name:\s*(.*?)\s+Year:\s*(\d{4})\s+Publication count:\s*(\d+)\s+Citation count:\s*(\d+)/;
+                const match = line.match(regex);
+                if (match) {
+                    const [_, name, year, pubs, cits] = match;
+                    const row = `<tr><td>${name}</td><td>${year}</td><td>${pubs}</td><td>${cits}</td></tr>`;
+                    tbody.innerHTML += row;
+                }
+                });
+
+                $('#researcherTable').DataTable({
+                pageLength: 10
+                });
+            })
+            .catch(error => {
+                console.error("Could not load output.txt:", error);
+            });
+        </script>
+
+        <article class="div3">
+            <h2>Results</h2>
+            <p>Place holderPlace holderPlace holderPlace holderPlace holderPlace holderPlace holderPlace holderPlace holder</p>
+            <p>Place holderPlace holderPlace holderPlace holderPlace holderPlace holderPlace holderPlace holderPlace holder</p>
+            <p>Place holderPlace holderPlace holderPlace holderPlace holderPlace holderPlace holderPlace holderPlace holder</p>
+        </article>
+
+        <article class="div5">
+            <h2>Continue</h2>
+        </article>
+        <article class="div6">
+            <h2>Continue</h2>
+        </article>
+      
+
+
+    </body>
+</html>

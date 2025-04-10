@@ -1,6 +1,4 @@
 import pandas as pd 
-from fpdf import FPDF
-from createTable import createTable
 from getCounts import getCounts
 
 def main():
